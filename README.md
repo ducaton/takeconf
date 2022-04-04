@@ -32,31 +32,30 @@
 
 ### Запуск отладочного сервера
 
-1. `cc -o server server.c -l json-c -l bsd`
-2. `./server`
+```
+cc -o server server.c -l json-c -l bsd
+./server
+```
 
 ### Установка и запуск клиентской части
 
-1. `cc -o client client.c -l json-c -l bsd`
-2. `cp ./client /bin/takeconf`
-3. 
-    ```
-    cp ./takeconf.service /etc/systemd/system/  
-    cp ./takeconf.timer /etc/systemd/system/  
-    systemctl daemon-reload
-    ```
-4. `printf "server_name=localhost\nport=49152">/etc/takeconf/takeconf.conf`
-5. 
-    ```
-    systemctl start takeconf.timer  
-    systemctl enable takeconf.timer
-    ```
+```
+cc -o client client.c -l json-c -l bsd
+cp ./client /bin/takeconf
+mkdir /etc/takeconf
+printf "server_name=localhost\nport=49152">/etc/takeconf/takeconf.conf
+cp ./takeconf.service /etc/systemd/system/
+cp ./takeconf.timer /etc/systemd/system/
+systemctl daemon-reload
+systemctl start takeconf.timer
+systemctl enable takeconf.timer
+```
 
 ### Демонстрация работы
 
 Состояние системы до применения настроек. Локальный файл конфигурации отсутствует, корзина скрыта с рабочего стола, на обоях горы:
 
-![До применения](/README-assets/beforeя.png)
+![До применения](/README-assets/before.png)
 
 Состояние системы после применения настроек. Сервер прислал настройки, изображённые на окне слева-cнизу. Поскольку настройки применились без ошибок, в локальный файл конфигурации и файл версии записались данные с сервера. Клиент проверил, установлен ли пакет «git», сменил обои, включил видимость корзины, создал каталог с пользователем «ivan» и занёс в него файл с автозапуском:
 
