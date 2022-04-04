@@ -1,0 +1,6 @@
+[Unit]
+Description=takeconf execution service
+
+[Service]
+ExecStart=sh -ce "/bin/takeconf 2> >(tee /tmp/takeconf.log >&2)"
+StandardOutput=journal

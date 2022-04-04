@@ -1,0 +1,17 @@
+{
+	"ver": "2",
+	"templatesPath": "/path_to_rep/samba/templates",
+	"pc": {
+		"pkgInstall": "git",
+	},
+	"users": {
+		"ivan": {
+			"addAutostart": "/path_to_rep/samba/autostart/redshift.desktop",
+			"trashVisible": "lol",
+		},
+		"catamn": {
+			"setWallpaper": "/path_to_rep/samba/wallpapers/mountains.jpg",
+			"trashVisible": "false",
+		},
+	},
+}

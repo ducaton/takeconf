@@ -1,0 +1,23 @@
+[Desktop Entry]
+Comment=
+Comment[ru_RU]=
+Encoding=UTF-8
+Exec=/home/catamn/Desktop/normal.sh
+GenericName=
+GenericName[ru_RU]=
+Hidden=false
+MimeType=
+Name=Redshift
+Name[ru_RU]=Redshift
+Path=
+RunHook=0
+StartupNotify=false
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=0.9.4
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+

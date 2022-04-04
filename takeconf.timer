@@ -1,0 +1,10 @@
+[Unit]
+Description=Run takeconf hourly and on boot
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=1h
+AccuracySec=1us
+
+[Install]
+WantedBy=timers.target
